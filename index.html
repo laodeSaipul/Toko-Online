@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Online</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Toko Online</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Beranda</a></li>
+                <li><a href="#produk">Produk</a></li>
+                <li><a href="#promo">Promo</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <img src="logo.png" alt="Toko Online">
+            <h2>Belanja Mudah, Aman, dan Nyaman!</h2>
+            <p>Dapatkan produk terbaik dengan harga terjangkau hanya di Toko Online.</p>
+        </section>
+        <section class="produk-list" id="produk">
+            <h2>Produk Unggulan</h2>
+            <div class="produk-grid" id="produk-items">
+                <!-- Produk akan dimunculkan dengan JavaScript -->
+            </div>
+        </section>
+        <section class="promo" id="promo">
+            <h2>Promo Spesial</h2>
+            <p>Diskon hingga 50% untuk produk pilihan selama bulan Juli!</p>
+            <div class="produk-grid" id="promo-items">
+                <!-- Produk promo akan dimunculkan dengan JavaScript -->
+            </div>
+        </section>
+        <section class="kontak" id="kontak">
+            <h2>Kontak Kami</h2>
+            <p>Email: info@tokoonline.com | WhatsApp: 0822-9155-2218</p>
+        </section>
+    </main>
+    <script>
+    // Data produk
+    const produk = [
+        {
+            nama: "Sepatu Sneakers",
+            harga: "Rp 350.000",
+            gambar: "sepatu1.jpg",
+            wa: "Sepatu Sneakers",
+            // keterangan dihapus sesuai permintaan
+        },
+        {
+            nama: "Jam Tangan Pria",
+            harga: "Rp 500.000",
+            gambar: "jamtangan1.jpg",
+            wa: "Jam Tangan Pria",
+            // keterangan dihapus sesuai permintaan
+        },
+        {
+            nama: "Tas Ransel",
+            harga: "Rp 250.000",
+            gambar: "ransel1.jpg",
+            wa: "Tas Ransel"
+        },
+        {
+            nama: "Kemeja Pria",
+            harga: "Rp 180.000",
+            gambar: "Kemejapria1.jpg",
+            wa: "Kemeja Pria"
+        },
+        {
+            nama: "Dompet Kulit",
+            harga: "Rp 120.000",
+            gambar: "dompet1.jpg",
+            wa: "Dompet Kulit"
+        },
+        {
+            nama: "Topi Fashion",
+            harga: "Rp 90.000",
+            gambar: "topi1.jpg",
+            wa: "Topi Fashion"
+        }
+    ];
+
+    const promo = [
+        {
+            nama: "Sneakers Promo",
+            harga: "Rp 250.000",
+            gambar: "sepatu2.jpg",
+            wa: "Sneakers Promo"
+        },
+        {
+            nama: "Jam Tangan Promo",
+            harga: "Rp 350.000",
+            gambar: "jamtanganpromo.jpg",
+            wa: "Jam Tangan Promo"
+        },
+        {
+            nama: "Tas Promo",
+            harga: "Rp 150.000",
+            gambar: "taspromo.jpg",
+            wa: "Tas Promo"
+        }
+    ];
+
+    function tampilkanProduk(list, targetId) {
+        const target = document.getElementById(targetId);
+        target.innerHTML = list.map(item => `
+            <div class="produk-item">
+                <img src="${item.gambar}" alt="${item.nama}">
+                <h3>${item.nama}</h3>
+                <p>${item.harga}</p>
+                ${item.keterangan ? item.keterangan : ''}
+                <a class="wa-btn" href="https://wa.me/6282291552218?text=Halo%20saya%20ingin%20membeli%20${encodeURIComponent(item.nama)}" target="_blank" rel="noopener">Beli via WhatsApp</a>
+            </div>
+        `).join("");
+    }
+    // Tambahkan CSS untuk keterangan produk jika belum ada
+    const style = document.createElement('style');
+    style.innerHTML = `.keterangan-produk { font-size: 0.97em; background: #f7f7f7; border-radius: 6px; padding: 10px; margin-bottom: 10px; color: #333; }`;
+    document.head.appendChild(style);
+
+    // Tampilkan produk default saat halaman dibuka
+    tampilkanProduk(produk, "produk-items");
+    tampilkanProduk(promo, "promo-items");
+
+    // Navigasi scroll ke produk/promo
+    document.querySelector('a[href="#produk"]').addEventListener('click', function(e) {
+        e.preventDefault();
+        tampilkanProduk(produk, "produk-items");
+        document.getElementById('produk').scrollIntoView({behavior: 'smooth'});
+    });
+    document.querySelector('a[href="#promo"]').addEventListener('click', function(e) {
+        e.preventDefault();
+        tampilkanProduk(promo, "promo-items");
+        document.getElementById('promo').scrollIntoView({behavior: 'smooth'});
+    });
+    </script>
+    <footer>
+        <p>&copy; 2025 Toko Online.cipta(saipul).</p>
+    </footer>
+</body>
+</html>

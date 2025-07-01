@@ -1,0 +1,224 @@
+.wa-btn {
+    display: inline-block;
+    background: #25d366;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background 0.2s;
+}
+.wa-btn:hover {
+    background: #128c7e;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #222;
+}
+
+header {
+    background: #1976d2;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+header nav ul li {
+    display: inline;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+header nav ul li a:hover {
+    color: #ffeb3b;
+}
+
+main {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hero img {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.produk-list {
+    margin-bottom: 40px;
+}
+
+.produk-list h2 {
+    text-align: center;
+    color: #1976d2;
+}
+
+.produk-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+@media (max-width: 800px) {
+    main {
+        padding: 10px;
+    }
+    .produk-grid {
+        gap: 16px;
+    }
+    .produk-item {
+        width: 45vw;
+        min-width: 160px;
+        max-width: 100%;
+        padding: 12px 4px 16px 4px;
+    }
+    .hero img {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    header h1 {
+        font-size: 1.3em;
+    }
+    .produk-item {
+        width: 90vw;
+        min-width: 120px;
+        padding: 8px 2px 12px 2px;
+    }
+    .produk-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .hero img {
+        max-width: 100%;
+        height: auto;
+    }
+    main {
+        padding: 2px;
+    }
+}
+
+.produk-item {
+    background: #fafafa;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    width: 250px;
+    text-align: center;
+    padding: 20px 10px 20px 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    transition: box-shadow 0.2s;
+}
+
+.produk-item:hover {
+    box-shadow: 0 4px 16px rgba(25, 118, 210, 0.15);
+}
+
+.produk-item img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.produk-item h3 {
+    margin: 10px 0 5px 0;
+    color: #1976d2;
+}
+
+.produk-item p {
+    margin: 0 0 15px 0;
+    font-weight: bold;
+    color: #388e3c;
+}
+
+.produk-item button {
+    background: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.produk-item button:hover {
+    background: #1565c0;
+}
+
+.promo {
+    background: #e3f2fd;
+    border-left: 5px solid #1976d2;
+    padding: 20px;
+    margin-bottom: 40px;
+    border-radius: 6px;
+}
+
+.promo h2 {
+    margin-top: 0;
+    color: #1976d2;
+}
+
+.kontak {
+    background: #f9fbe7;
+    border-left: 5px solid #388e3c;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+.kontak h2 {
+    margin-top: 0;
+    color: #388e3c;
+}
+
+footer {
+    background: #1976d2;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+}
